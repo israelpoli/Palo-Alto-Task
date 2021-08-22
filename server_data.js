@@ -20,7 +20,7 @@ app.use('/GET', (req, res) => {
 app.use('/POST', (req, res) => {
 
     if (!req.body.resource || !req.body.category || !req.body.severity || !req.body.status) {
-        res.send("kaka")
+        res.send("is not good")
 
     }
     var data_tags = {};
@@ -43,7 +43,7 @@ app.use('/POST', (req, res) => {
 
 
     db.push(data);
-    res.send(data);
+    res.send("is good");
 });
 
 
