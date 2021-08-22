@@ -14,7 +14,7 @@ function for_tags(tags) {
 }
 
 
-// "size: " + props.data.tags[1].size + ",  region: " + props.data.tags[2].region
+
 function Win(props) {
 
     var flag = props.flag;

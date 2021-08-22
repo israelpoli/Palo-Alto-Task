@@ -9,7 +9,7 @@ function App() {
 
   const [data, setData] = useState({ data: null, isRedy: false });
   const [all_data, setAll_data] = useState(false);
-  const [errors, setErrors] = useState(false);
+  const [partial_data, setPartial_data] = useState(false);
 
   function imp_data() {
     fetch("http://localhost:8080/GET").then((res) => res.json()).then((resp) => setData({ data: resp, isRedy: true }));
@@ -20,7 +20,7 @@ function App() {
   }
 
   const err = () => {
-    setErrors(true);
+    setPartial_data(true);
   }
 
   useEffect(() => {
@@ -30,20 +30,20 @@ function App() {
 
   if (!data.isRedy) {
     return (
-      <h1>israel</h1>
+      <h1>No data, check if the server is running</h1>
     )
   }
   return (
     <div>
 
-      {(!all_data && !errors) ? <div className='grid-buttons'>
+      {(!all_data && !partial_data) ? <div className='grid-buttons'>
         <button className="options" onClick={alldata}>ALL DATA </button>
         <button className="options" onClick={err}>ERRORS</button>
       </div> : null}
 
-      {all_data ? <Card data={data.data} isRedy={data.isRedy} flag={false} /> : null}
+      {all_data ? <Card data={data.data} flag={false} /> : null}
 
-      {errors ? <Card data={data.data} isRedy={data.isRedy} flag={true} /> : null}
+      {partial_data ? <Card data={data.data} flag={true} /> : null}
 
 
     </div >

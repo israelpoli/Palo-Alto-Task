@@ -10,7 +10,7 @@ function Card(props) {
     const [oneOpen, setOneOpen] = useState(false);
 
     const isOpen = () => {
-        console.log(oneOpen);
+
         return oneOpen;
     }
 

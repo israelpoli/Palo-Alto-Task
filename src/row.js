@@ -2,16 +2,22 @@ import { useState } from 'react';
 import './card.css';
 import Win from './window';
 
-function Row(props) {
+function mappingData(data) {
 
-    var flag = props.flag;
-    var date = String(new Date(parseInt(props.data.creation_date))).split(" ");
-    var data = {
-        "resource": props.data.resource,
-        "category": props.data.category,
+    var date = String(new Date(parseInt(data.creation_date))).split(" ");
+    return {
+        "resource": data.resource,
+        "category": data.category,
         "creation_date": date[1] + " " + date[2] + " " + date[3]
     }
 
+}
+
+
+function Row(props) {
+
+    var flag = props.flag;
+    var data = mappingData(props.data);
 
     const [open, setOpen] = useState(false)
 
@@ -24,7 +30,7 @@ function Row(props) {
         }
         else {
             if (props.isOpen() == false) {
-                console.log(props.isOpen())
+
                 setOpen(!open)
                 props.setOneOpen(!props.isOpen());
             }
@@ -44,7 +50,7 @@ function Row(props) {
                 <div className="category">{data.category}</div>
             </div>
             <div className="item3">
-                <div className="time">{data.creation_date}</div>
+                <div className="date">{data.creation_date}</div>
             </div>
             <div className="item4">
 
