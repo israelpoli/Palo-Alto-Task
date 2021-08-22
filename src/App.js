@@ -19,7 +19,7 @@ function App() {
     setAll_data(true);
   }
 
-  const err = () => {
+  const partialData = () => {
     setPartial_data(true);
   }
 
@@ -38,12 +38,12 @@ function App() {
 
       {(!all_data && !partial_data) ? <div className='grid-buttons'>
         <button className="options" onClick={alldata}>ALL DATA </button>
-        <button className="options" onClick={err}>ERRORS</button>
+        <button className="options" onClick={partialData}>PARTIAL DATA</button>
       </div> : null}
 
-      {all_data ? <Card data={data.data} flag={false} /> : null}
+      {partial_data ? <Card data={data.data} flag={false} /> : null}
 
-      {partial_data ? <Card data={data.data} flag={true} /> : null}
+      {all_data ? <Card data={data.data} flag={true} /> : null}
 
 
     </div >

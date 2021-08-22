@@ -50,16 +50,17 @@ You need to open a command line and write the following lines:
 
     1."npx create-react-app my-app", Press ENTER;
     2."npm install express --save", (Note that you are in the my-app folder);
-    3.Download src, platform-update-to-server, server_data.js, to a local folder;
-    4.Copy the server_data.js file to the my-app folder, and run in cmd,"node server_data.js".
+    3."npm install cors";
+    4.Download src, platform-update-to-server, server_data.js, to a local folder;
+    5.Copy the server_data.js file to the my-app folder, and run in cmd,"node server_data.js".
 
 To upload and send data packets to the server:
 
-    5.Copy the contents of the platform-update-to-server folder to the src folder located in the my-app folder;
-    6.Open another command prompt window, and then go to the my-app folder, and run "npm start";
+    6.Copy the contents of the platform-update-to-server folder to the src folder located in the my-app folder;
+    7.Open another command prompt window, and then go to the my-app folder, and run "npm start";
 
 To see the web platform that displays the information:
 
-    7.copy the src folder to the my-app folder,and run "npm start";
+    8.copy the src folder to the my-app folder,and run "npm start";
 
 ## enjoy ;-)
