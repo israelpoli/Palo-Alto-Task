@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 function FormForData() {
 
-    const [data, setData] = useState()
+
     const [resource, setResource] = useState();
     const [category, setCategory] = useState();
     const [severity, setSeverity] = useState();
@@ -17,19 +17,32 @@ function FormForData() {
 
 
     const sendToServer = () => {
-        setData({ resource, category, severity, status, "tags": [{ name }, { size }, { region }, type ? { type } : "", tag ? { tag } : ""] })
+
+        var data = {
+            resource,
+            category,
+            severity,
+            status,
+            tags: [name ? { name } : "", size ? { size } : "", region ? { region } : "", type ? { type } : "", tag ? { tag } : ""],
+        }
+
+
+
         fetch("http://localhost:8080/POST", {
             method: "POST",
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(data)
         })
             .then((res) => res.text()).then((resp) => {
+                console.log(resp);
 
-                if (resp === "is not good")
+                if (resp === "is not good") {
                     setSent("You have not filled in all the required fields, Click Back to Refill")
+
+                }
                 else {
                     setSent("The information was sent, Click Back to send more")
-                    setData(''); setResource(''); setCategory(''); setSeverity(''); setStatus(''); setName(''); setSize(''); setRegion('');
+                    setResource(''); setCategory(''); setSeverity(''); setStatus(''); setName(''); setSize(''); setRegion('');
                     setType(''); setTag('');
                 }
             })

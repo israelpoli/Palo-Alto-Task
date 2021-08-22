@@ -23,27 +23,29 @@ app.use('/POST', (req, res) => {
         res.send("is not good")
 
     }
-    var data_tags = {};
-    req.body.tags.map((tag) => {
-        if (tag) {
+    else {
+        var data_tags = {};
+        req.body.tags.map((tag) => {
+            if (tag) {
 
-            data_tags[Object.keys(tag)[0]] = tag[Object.keys(tag)[0]];
-        }
-    })
-    var data = {
-        resource: req.body.resource,
-        category: req.body.category,
-        creation_date: req.body.creation_date,
-        severity: req.body.severity,
-        status: req.body.status,
-        region: req.body.region,
-        tags: data_tags,
-        creation_date: new Date().getTime()
-    };
+                data_tags[Object.keys(tag)[0]] = tag[Object.keys(tag)[0]];
+            }
+        })
+        var data = {
+            resource: req.body.resource,
+            category: req.body.category,
+            creation_date: req.body.creation_date,
+            severity: req.body.severity,
+            status: req.body.status,
+            region: req.body.region,
+            tags: data_tags,
+            creation_date: new Date().getTime()
+        };
 
 
-    db.push(data);
-    res.send("is good");
+        db.push(data);
+        res.send("is good");
+    }
 });
 
 
