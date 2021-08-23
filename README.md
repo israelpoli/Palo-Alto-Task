@@ -51,8 +51,8 @@ You need to open a command line and write the following lines:
     1."npx create-react-app my-app", Press ENTER;
     2."npm install express --save", (Note that you are in the my-app folder);
     3."npm install cors";
-    4.Download src, platform-update-to-server, server_data.js, to a local folder;
-    5.Download all the files / folders from gitHub and copy them to the my-app folder;
+    4.Download all the files / folders from gitHub;
+    5.Copy them to the my-app folder;
 
 Run the server:
 
