@@ -9,9 +9,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 A node server that stores the information within it,
 
-The server receives information (Jason package) from a web platform,
+The server receives information (Json package) from a web platform,
 
-The server sends the information it stores (also as a Jason package), When a GET request is sent to it.
+The server sends the information it stores (also as a Json package), When a GET request is sent to it.
 
 file:
     server_data.js;
@@ -22,10 +22,10 @@ A web platform that allows you to upload and send data to a server,
 
 Sending is done by POST method,
 
-The package passes as a Jason package,
+The package passes as a Json package,
 
 Two options to load the data:
-    1: Copy Block Jason,
+    1: Copy Block Json,
     2: Fill out a form with the required fields,
 
 In both cases, the system will check if the required fields are full, and when it finds a required field that is not filled in, it will alert you;
@@ -52,15 +52,18 @@ You need to open a command line and write the following lines:
     2."npm install express --save", (Note that you are in the my-app folder);
     3."npm install cors";
     4.Download src, platform-update-to-server, server_data.js, to a local folder;
-    5.Copy the server_data.js file to the my-app folder, and run in cmd,"node server_data.js".
+    5.Download all the files / folders from gitHub and copy them to the my-app folder;
+
+Run the server:
+
+    6:Put in the command line "srver_data.js", (Note that you are in the my-app folder);
 
 To upload and send data packets to the server:
 
-    6.Copy the contents of the platform-update-to-server folder to the src folder located in the my-app folder;
-    7.Open another command prompt window, and then go to the my-app folder, and run "npm start";
+    7.Open another command line window, and put "npm run toUpdate", (Note that you are in the my-app folder);
 
 To see the web platform that displays the information:
 
-    8.copy the src folder to the my-app folder,and run "npm start";
+    8.Open another command line window, and put "npm run start", (Note that you are in the my-app folder);
 
 ## enjoy ;-)
