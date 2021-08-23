@@ -56,7 +56,7 @@ You need to open a command line and write the following lines:
 
 Run the server:
 
-    6:Put in the command line "srver_data.js", (Note that you are in the my-app folder);
+    6:Put in the command line "node srver_data.js", (Note that you are in the my-app folder);
 
 To upload and send data packets to the server:
 
