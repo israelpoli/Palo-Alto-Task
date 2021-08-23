@@ -77,7 +77,8 @@ button{
     grid-template-columns:1fr 20% 20%;
     grid-template-rows: 40px auto;
     border-top: 1px solid rgb(155, 155, 145) ;
-    background-color: whitesmoke;
+    background-color: #E8EAEF;
+    ;
     border: 1px solid rgb(155, 155, 145);
     box-shadow: 0 3px 7px 0 rgb(232, 234, 239);
 
@@ -85,7 +86,7 @@ button{
 
 .grid:hover{
 
-    background-color: whitesmoke;
+    background-color: #E8EAEF;
     border: 1px solid rgb(155, 155, 145);
     box-shadow: 0 3px 7px 0 rgb(232, 234, 239);
 
@@ -148,8 +149,10 @@ button{
     margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    border: 1px solid rgb(232, 234, 239);
-    background-color: whitesmoke;
+    border: 2px solid gainsboro;
+    background-color:  #E8EAEF;
+    border-radius: 1px
+    ;
     
 }
 
@@ -192,11 +195,8 @@ button{
     width: 60px;
     height: 60px;
     margin-top: 25px;margin-bottom: 25px;
-    filter:  drop-shadow(232, 234, 239,0);
-    text-align: center;
+    filter:invert(100%) sepia(22%) saturate(1269%) hue-rotate(177deg) brightness(96%) contrast(95%);
     display: block;
-    justify-content: center;
-    align-items: center;
     margin-left: auto;
     margin-right: auto;
     
