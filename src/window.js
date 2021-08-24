@@ -13,26 +13,35 @@ function for_tags(tags) {
     return stringForTags;
 }
 
+function checkIfDetails(data) {
 
+    if (!data.severity && !data.status && Object.entries(data.tags).length === 0) {
+        return false;
+    }
+    return true;
+
+}
 
 function Win(props) {
 
-    var flag = props.flag;
+    var flag = checkIfDetails(props.data);
+
     var data = {
 
-        "severity": props.data.severity,
-        "status": props.data.status,
+        "severity": props.data.severity ? props.data.severity : null,
+        "status": props.data.status ? props.data.status : null,
         "tags": for_tags(props.data.tags)
     }
 
 
     const mapping_dict = Object.keys(data).map((key, index) => {
-        return (
-            <div className="grid-win">
-                <div className="item-win1">{key}:</div>
-                <div className="item-win2">{data[key]}</div>
-            </div>
-        )
+        if (data[key] != null && data[key] != "")
+            return (
+                <div className="grid-win">
+                    <div className="item-win1">{key}:</div>
+                    <div className="item-win2">{data[key]}</div>
+                </div>
+            )
     });
 
     return (

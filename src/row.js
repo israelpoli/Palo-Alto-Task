@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import './card.css';
 import Win from './window';
 
@@ -16,32 +16,19 @@ function mappingData(data) {
 
 function Row(props) {
 
-    var flag = props.flag;
     var data = mappingData(props.data);
-
-    const [open, setOpen] = useState(false)
 
     const toOpen = () => {
 
-        if (open) {
+        props.changeOpen();
+        props.setOpen(props.id);
 
-            setOpen(!open);
-            props.setOneOpen(!props.isOpen());
-        }
-        else {
-            if (props.isOpen() == false) {
-
-                setOpen(!open)
-                props.setOneOpen(!props.isOpen());
-            }
-        }
     }
-
-
 
     return (
 
-        <div className={!open ? "grid" : "grid-open"} onClick={toOpen}>
+
+        <div className={!props.open ? "grid" : "grid-open"} onClick={toOpen}>
 
             <div className="item1">
                 <div className="category" >{data.resource}</div>
@@ -54,9 +41,10 @@ function Row(props) {
             </div>
             <div className="item4">
 
-                {open ? <Win data={props.data} flag={flag} /> : null}
+                {props.open ? <Win data={props.data} /> : null}
             </div>
         </div>
+
 
 
     );

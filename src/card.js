@@ -2,23 +2,46 @@ import { useState } from 'react';
 import './card.css';
 import Row from './row';
 
+
+
 function Card(props) {
 
-
     const data = props.data;
-    var flag = props.flag;
-    const [oneOpen, setOneOpen] = useState(false);
+    const [clous, setClous] = useState();
+    const [open, setOpen] = useState();
 
-    const isOpen = () => {
+    const changeOpen = () => {
 
-        return oneOpen;
+        if (open == clous) {
+
+            setClous(null);
+        }
+        else {
+            setClous(open);
+        }
     }
 
-    const mappingList = data.map((d) => {
+
+    const mappingList = () => {
+
         return (
-            <Row data={d} flag={flag} isOpen={isOpen} setOneOpen={setOneOpen} />
-        )
-    });
+            data.map((d, index) => {
+
+                if (index == open && index != clous) {
+                    return (<Row data={d} key={index} id={index} open={true} setOpen={setOpen} changeOpen={changeOpen} />)
+                }
+
+                if (index == open && index == clous) {
+
+                    return (<Row data={d} key={index} id={index} open={false} setOpen={setOpen} changeOpen={changeOpen} />)
+                }
+                return (
+
+                    <Row data={d} key={index} id={index} open={false} setOpen={setOpen} changeOpen={changeOpen} />
+                )
+            }));
+    }
+
 
     return (
         <div >
@@ -28,7 +51,9 @@ function Card(props) {
                     {data.length} Total
                 </div>
                 <div className="container">
-                    {mappingList}
+
+                    {mappingList()}
+
                 </div>
             </div>
         </div >

@@ -19,11 +19,13 @@ app.use('/GET', (req, res) => {
 
 app.use('/POST', (req, res) => {
 
-    if (!req.body.resource || !req.body.category || !req.body.severity || !req.body.status) {
+    if (!req.body.resource || !req.body.category) {
         res.send("is not good")
 
     }
+
     else {
+
         var data_tags = {};
         req.body.tags.map((tag) => {
             if (tag) {
