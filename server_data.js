@@ -36,7 +36,8 @@ app.use('/POST', (req, res) => {
         var data = {
             resource: req.body.resource,
             category: req.body.category,
-            creation_date: req.body.creation_date,
+            // creation_date: req.body.creation_date,
+            error: req.body.error ? req.body.error : (req.body.status == "error") ? 1 : 0,
             severity: req.body.severity,
             status: req.body.status,
             region: req.body.region,

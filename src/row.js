@@ -8,7 +8,8 @@ function mappingData(data) {
     return {
         "resource": data.resource,
         "category": data.category,
-        "creation_date": date[1] + " " + date[2] + " " + date[3]
+        "creation_date": date[1] + " " + date[2] + " " + date[3],
+        "error": data.error
     }
 
 }
@@ -40,6 +41,9 @@ function Row(props) {
                 <div className="date">{data.creation_date}</div>
             </div>
             <div className="item4">
+                <div className="date">{data.error}</div>
+            </div>
+            <div className="item5">
 
                 {props.open ? <Win data={props.data} /> : null}
             </div>

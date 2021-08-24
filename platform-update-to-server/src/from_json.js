@@ -12,6 +12,7 @@ function FromJson(props) {
         var data = {
             resource: for_map.resource,
             category: for_map.category,
+            error: for_map.error,
             severity: for_map.details.severity,
             status: for_map.details.status,
             tags: for_map.details.tags,

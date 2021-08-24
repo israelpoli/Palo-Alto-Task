@@ -106,11 +106,11 @@
 .item-form-general{
     
     font-size:medium;
-    margin-top: 45px;
+    margin-top: 30px;
     margin-left: 15px;margin-right: 15px;
     display: grid;
     grid-template-columns: 20% 1fr;
-    grid-template-rows: 60px;
+    grid-template-rows: 50px;
 }
 
 .item-form-details{

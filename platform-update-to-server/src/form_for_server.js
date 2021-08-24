@@ -13,6 +13,7 @@ function FormForData() {
     const [region, setRegion] = useState();
     const [type, setType] = useState();
     const [tag, setTag] = useState();
+    const [error, setError] = useState();
     const [sent, setSent] = useState(false);
 
 
@@ -21,6 +22,7 @@ function FormForData() {
         var data = {
             resource,
             category,
+            error,
             severity,
             status,
             tags: [name ? { name } : "", size ? { size } : "", region ? { region } : "", type ? { type } : "", tag ? { tag } : ""],
@@ -43,7 +45,7 @@ function FormForData() {
                 else {
                     setSent("The information was sent, Click Back to send more")
                     setResource(''); setCategory(''); setSeverity(''); setStatus(''); setName(''); setSize(''); setRegion('');
-                    setType(''); setTag('');
+                    setType(''); setTag(''); setError();
                 }
             })
     }
@@ -73,6 +75,10 @@ function FormForData() {
                             </div>
                             <div className="item-form-general">category:
                                 <textarea className="form-input3" value={category} onChange={(e) => { setCategory(e.target.value) }} />
+
+                            </div>
+                            <div className="item-form-general">error:
+                                <textarea className="form-input3" value={error} onChange={(e) => { setError(e.target.value) }} />
 
                             </div>
 
