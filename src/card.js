@@ -7,17 +7,17 @@ import Row from './row';
 function Card(props) {
 
     const data = props.data;
-    const [clous, setClous] = useState();
+    const [close, setClose] = useState();
     const [open, setOpen] = useState();
 
     const changeOpen = () => {
 
-        if (open == clous) {
+        if (open == close) {
 
-            setClous(null);
+            setClose(null);
         }
         else {
-            setClous(open);
+            setClose(open);
         }
     }
 
@@ -27,11 +27,11 @@ function Card(props) {
         return (
             data.map((d, index) => {
 
-                if (index == open && index != clous) {
+                if (index == open && index != close) {
                     return (<Row data={d} key={index} id={index} open={true} setOpen={setOpen} changeOpen={changeOpen} />)
                 }
 
-                if (index == open && index == clous) {
+                if (index == open && index == close) {
 
                     return (<Row data={d} key={index} id={index} open={false} setOpen={setOpen} changeOpen={changeOpen} />)
                 }
