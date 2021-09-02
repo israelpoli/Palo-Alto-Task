@@ -48,22 +48,21 @@ folder:
 
 You need to open a command line and write the following lines:
 
-    1."npx create-react-app my-app", Press ENTER;
-    2."npm install express --save", (Note that you are in the my-app folder);
-    3."npm install cors";
-    4.Download all the files / folders from gitHub;
-    5.Copy them to the my-app folder;
+    1."npx create-react-app my-project", Press ENTER;
+    2."npm install xtypejs --save &&  npm install express --save && npm install cors", (Note that you are in the my-project folder);
+    3.Download all the files / folders from gitHub;
+    4.Copy them to the my-project folder;
 
 Run the server:
 
-    6:Put in the command line "node server_data.js", (Note that you are in the my-app folder);
+    5:Put in the command line "node server_data.js", (Note that you are in the my-project folder);
 
 To upload and send data packets to the server:
 
-    7.Open another command line window, and put "npm run toUpdate", (Note that you are in the my-app folder);
+    6.Open another command line window, and put "npm run toUpdate", (Note that you are in the my-project folder);
 
 To see the web platform that displays the information:
 
-    8.Open another command line window, and put "npm run start", (Note that you are in the my-app folder);
+    7.Open another command line window, and put "npm run start", (Note that you are in the my-project folder);
 
 ## enjoy ;-)
